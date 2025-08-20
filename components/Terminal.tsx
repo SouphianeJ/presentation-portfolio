@@ -2,12 +2,13 @@
 import React from "react";
 
 const LINES = [
-  "> souphiane --skills --format=json",
-  '{\n  "tech": ["Angular","Node","MongoDB","PHP","SQL"],\n  "forts": ["Analyser","Améliorer","Solutionner","Présenter"],\n  "disponibilité": ["🟢 Freelance","🟢 CDI"]\n}',
+  "Souphiane JENDER",
+  "Ingénieur Pédagogique",
+  "Chef de projet",
+  "Déploiement de solution numériques sur-mesure",
+  '{\n  "tech": ["Angular","Node","MongoDB","PHP","SQL"],\n  "forts": ["Analyser","Améliorer","Solutionner","Présenter"],\n  "disponibilité": ["🟢 Freelance","🟠 CDI"]\n}',
   "> portfolio --version",
-  "v2.3.1 - Brutalist Edition",
-  "> adoption --stats --last=12w",
-  '{ "usage": "↗", "satisfaction": "4.6/5", "incidents": "↓ 37%" }'
+  "v2.3.1 - Brutalist Edition"
 ];
 
 export default function Terminal() {
