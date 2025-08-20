@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brutal-border: 4px solid #000;
+}
+html,body{
+  @apply bg-white text-black font-mono;
+}
+@media (prefers-color-scheme: dark){
+  html,body{
+    @apply bg-neutral-950 text-white;
+  }
+}
+
+.brutal-card{
+  @apply border-4 border-black bg-white dark:bg-neutral-900 dark:border-white;
+}
+.crt::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  mix-blend-mode:multiply;
+  opacity:.25;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Radial reveal */
+.reveal {
+  clip-path: circle(var(--clip,0%) at var(--cx,50%) var(--cy,50%));
+  transition: clip-path .6s ease-in-out;
+}
+.reveal.open {
+  --clip: 140%;
+}
+
+/* Modal basics */
+.modal-scrim {
+  @apply fixed inset-0 bg-black/60 z-50 hidden;
+}
+.modal-scrim.open {
+  @apply block;
+}
+.modal-card {
+  @apply max-w-3xl mx-auto mt-[5vh] max-h-[90vh] overflow-auto p-5 brutal-card bg-white text-black dark:bg-neutral-900 dark:text-white;
+}
+
+/* Utility */
+.grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
