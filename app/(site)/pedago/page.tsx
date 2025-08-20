@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import Modal from "@/components/Modal";
 import { pedaproject } from "@/lib/content";
 import Slideshow from "@/components/Slideshow";
@@ -31,7 +31,9 @@ export default function PedagoPage() {
           </Card>
         ))}
       </section>
-      <Modal />
+      <Suspense fallback={null}>
+        <Modal />
+      </Suspense>
     </main>
   );
 }
