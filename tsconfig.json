@@ -17,8 +17,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/": [
-        "./"
+      "@/*": [
+        "./*"
       ]
     },
     "incremental": true,
