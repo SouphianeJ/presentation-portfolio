@@ -1,0 +1,54 @@
+.competencies-content h2 {
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.competencies-content h3 {
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+.competencies-content ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.competencies-content ul ul {
+  list-style: circle;
+  margin-left: 1.25rem;
+}
+
+.competencies-content .grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.competencies-content .card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.competencies-content .tag {
+  display: inline-block;
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.competencies-content .tag.ok {
+  background-color: #22c55e;
+}
+
+.competencies-content .tag.wip {
+  background-color: #f59e0b;
+}
+
+.competencies-content .tag.no {
+  background-color: #ef4444;
+}
