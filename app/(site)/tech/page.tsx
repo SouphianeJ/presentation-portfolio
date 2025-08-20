@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -43,7 +43,9 @@ export default function TechPage() {
           </Card>
         ))}
       </section>
-      <Modal />
+      <Suspense fallback={null}>
+        <Modal />
+      </Suspense>
     </main>
   );
 }
