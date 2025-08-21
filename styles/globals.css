@@ -56,7 +56,7 @@ body {
 }
 
 .brutal-card {
-  @apply rounded-neon bg-surface/80 border border-pri/30 shadow-neon;
+  @apply rounded-neon bg-surface bg-opacity-80 border border-pri border-opacity-30 shadow-neon;
   backdrop-filter: blur(8px);
 }
 
@@ -78,7 +78,7 @@ body {
 }
 
 .modal-scrim {
-  @apply fixed inset-0 bg-black/60 z-50 hidden;
+  @apply fixed inset-0 bg-black bg-opacity-60 z-50 hidden;
 }
 .modal-scrim.open {
   @apply block;
