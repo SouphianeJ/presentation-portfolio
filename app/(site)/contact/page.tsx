@@ -1,23 +1,18 @@
-import { Button } from "@/components/ui/Button";
+import { NeonButton } from "@/components/NeonButton";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export default function ContactPage() {
   return (
-    <main className="p-6 md:p-10 max-w-3xl mx-auto space-y-4">
-      <h2 className="text-3xl font-extrabold">Contact direct</h2>
+    <section className="p-6 md:p-10 max-w-3xl mx-auto space-y-4">
+      <SectionHeader title="Contact direct" />
       <p>
-        Email: <a className="underline" href="mailto:sjender@exemple.com">sjender@exemple.com</a>
+        Email: <a className="link-neon" href="mailto:sjender@exemple.com">sjender@exemple.com</a>
       </p>
       <div className="flex gap-3">
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-          <Button>LinkedIn</Button>
-        </a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">
-          <Button>GitHub</Button>
-        </a>
-        <a href="/cv.pdf" target="_blank" rel="noreferrer">
-          <Button>PDF CV</Button>
-        </a>
+        <NeonButton as="a" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</NeonButton>
+        <NeonButton as="a" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</NeonButton>
+        <NeonButton as="a" href="/cv.pdf" target="_blank" rel="noreferrer">PDF CV</NeonButton>
       </div>
-    </main>
+    </section>
   );
 }
