@@ -2,6 +2,7 @@
 import React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getModalById } from "@/lib/modal";
+import { NeonButton } from "@/components/NeonButton";
 
 export default function Modal() {
   const params = useSearchParams();
@@ -38,9 +39,9 @@ export default function Modal() {
       }}
     >
       <div className="modal-card">
-        <button onClick={close} className="border-4 border-black px-2 py-1 float-right">
+        <NeonButton onClick={close} className="float-right">
           Fermer
-        </button>
+        </NeonButton>
         <h3 className="text-2xl font-extrabold mt-2">{item.modalTitle || item.title}</h3>
         {/* ⚠️ contenu injecté tel quel (pas de modification) */}
         <div
