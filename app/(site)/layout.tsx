@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={clsx("min-h-screen")}>{children}</body>
+      <body className={clsx("min-h-screen bg-bg text-text")}> 
+        <div className="noise-overlay" />
+        {children}
+      </body>
     </html>
   );
 }
