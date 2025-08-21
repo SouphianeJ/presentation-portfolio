@@ -18,6 +18,12 @@ export default {
         pri2: "var(--pri-2)",
         acc: "var(--acc)",
         gridLine: "var(--grid-line)",
+        // --- alias conservés pour la home ---
+        tech:   { primary: "#6C5CE7", neon: "#00F3FF" },
+        edu:    { primary: "#FF7675", secondary: "#FDCB6E" },
+        proj:   { primary: "#00b822", secondary: "#00b894" },
+        news:   { primary: "#000000", secondary: "#828282" },
+        contact:{ primary: "#00E5FF", secondary: "#FF00F5" },
       },
       borderRadius: {
         neon: "var(--radius)",
