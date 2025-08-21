@@ -14,7 +14,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body className={clsx("min-h-screen")}>
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="fixed bottom-4 right-4 z-[100] pointer-events-auto">
           <A11yMonoToggle />
         </div>
         {children}

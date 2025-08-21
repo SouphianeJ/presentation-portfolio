@@ -129,3 +129,11 @@ html,body{
 [data-a11y="mono"] .prose {
   color: var(--text);
 }
+
+/* Forcer le texte en N&B sur la home quand le mode est activé */
+html.a11y-mono .text-tech-primary,
+html.a11y-mono .text-edu-primary,
+html.a11y-mono .text-proj-primary,
+html.a11y-mono .text-contact-primary {
+  color: var(--text) !important;
+}
