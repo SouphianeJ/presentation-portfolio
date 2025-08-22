@@ -43,6 +43,12 @@ export default function GameCanvas({ competences, onRoundComplete, onGameOver }:
         return { competence, pool };
       };
 
+      type EmitterManager = Phaser.GameObjects.GameObject & {
+        createEmitter: (
+          config?: Phaser.Types.GameObjects.Particles.ParticleEmitterConfig
+        ) => Phaser.GameObjects.Particles.ParticleEmitter;
+      };
+
       // --- Scene ---
       class MainScene extends Phaser.Scene {
         // objets
@@ -75,7 +81,7 @@ export default function GameCanvas({ competences, onRoundComplete, onGameOver }:
         roundStart = 0;
         roundScoreDelta = 0;
 
-        particleMgr!: Phaser.GameObjects.Particles.ParticleEmitterManager;
+        particleMgr!: EmitterManager;
         trail!: Phaser.GameObjects.Particles.ParticleEmitter;
 
         create() {
