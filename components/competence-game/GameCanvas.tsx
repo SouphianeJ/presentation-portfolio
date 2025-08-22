@@ -107,7 +107,7 @@ export default function GameCanvas({ competences, onRoundComplete, onGameOver }:
 
           // trail
           // cast due to missing Phaser ParticleEmitterManager typings in our env
-          this.particleMgr = this.add.particles("dot") as unknown as EmitterManager;
+          this.particleMgr = this.add.particles(0, 0, "dot") as unknown as EmitterManager;
           this.trail = this.particleMgr.createEmitter({
             follow: this.player,
             quantity: 1,
