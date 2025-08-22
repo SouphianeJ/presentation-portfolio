@@ -106,7 +106,8 @@ export default function GameCanvas({ competences, onRoundComplete, onGameOver }:
           (this.player.body as Phaser.Physics.Arcade.Body).setImmovable(true);
 
           // trail
-          this.particleMgr = this.add.particles("dot");
+          // cast due to missing Phaser ParticleEmitterManager typings in our env
+          this.particleMgr = this.add.particles("dot") as unknown as EmitterManager;
           this.trail = this.particleMgr.createEmitter({
             follow: this.player,
             quantity: 1,
