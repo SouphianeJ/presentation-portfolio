@@ -15,7 +15,7 @@ export default function GameCanvas({ competences, onRoundComplete, onGameOver }:
   useEffect(() => {
     let game: any;
     (async () => {
-      const Phaser = await import("phaser");
+      const Phaser = (await import("phaser")).default;
 
       const GAME_W = Math.min(
         960,
