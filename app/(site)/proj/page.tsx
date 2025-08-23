@@ -1,10 +1,11 @@
 import React from "react";
 import { Card } from "@/components/ui/Card";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export default function ProjPage() {
   return (
-    <main className="p-6 md:p-10 max-w-6xl mx-auto space-y-6">
-      <h2 className="text-3xl font-extrabold">Gestion de projets</h2>
+    <section className="p-6 md:p-10 max-w-6xl mx-auto space-y-6">
+      <SectionHeader section="Projets" title="Gestion de projets" />
       <div className="grid grid-auto gap-4">
         <Card>
           <h3 className="text-xl font-extrabold">Cadre POC → REX</h3>
@@ -16,6 +17,6 @@ export default function ProjPage() {
           </ol>
         </Card>
       </div>
-    </main>
+    </section>
   );
 }

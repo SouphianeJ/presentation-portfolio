@@ -12,6 +12,7 @@ export default function TechPage() {
   return (
     <section className="p-6 md:p-10 max-w-6xl mx-auto space-y-6">
       <SectionHeader
+        section="Tech"
         kicker="Tech"
         title="Engineering Tech"
         subtitle="Stack: Angular · Node · MongoDB · PHP · SQL · SSO"

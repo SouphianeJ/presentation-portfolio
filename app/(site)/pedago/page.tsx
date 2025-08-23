@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 export default function PedagoPage() {
   return (
     <section className="p-6 md:p-10 max-w-6xl mx-auto space-y-6">
-      <SectionHeader kicker="Pédagogie" title="Pédagogie 4.0" />
+      <SectionHeader section="Pédagogie" kicker="Pédagogie" title="Pédagogie 4.0" />
       <Slideshow skills={pedaproject.map((p) => ({ title: p.title, text: p.text, modalContent: p.modalContent }))} />
       <div className="grid grid-auto gap-5">
         {pedaproject.map((item) => (

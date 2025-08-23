@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { clsx } from "clsx";
+import HomePortal from "@/components/HomePortal";
+import FooterHomeLink from "@/components/FooterHomeLink";
 
 export const metadata: Metadata = {
   title: "Souphiane Jender — Portfolio (Tech × Pédago)",
@@ -12,7 +14,11 @@ export const metadata: Metadata = {
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={clsx("min-h-screen")}>{children}</body>
+      <body className={clsx("min-h-screen")}> 
+        <HomePortal />
+        {children}
+        <FooterHomeLink />
+      </body>
     </html>
   );
 }
