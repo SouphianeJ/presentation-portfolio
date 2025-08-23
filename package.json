@@ -16,7 +16,8 @@
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.441.0",
     "recharts": "^2.9.0",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "phaser": "^3.70.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
