@@ -1,3 +1,5 @@
+import type Phaser from "phaser";
+
 // text normalization for matching
 export const normalize = (s: string) =>
   s

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import type Phaser from "phaser";
 import type { Competence, RoundResult } from "./types";
 import {
   normalize,
@@ -25,9 +26,9 @@ export default function GameCanvas({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let game: any;
+    let game: Phaser.Game | undefined;
     (async () => {
-      const Phaser = (await import("phaser")).default;
+      const PhaserLib = (await import("phaser")).default as typeof Phaser;
 
       const GAME_W = Math.min(
         960,
@@ -55,7 +56,10 @@ export default function GameCanvas({
         return { competence, pool };
       };
 
-      class MainScene extends Phaser.Scene {
+      class MainScene extends PhaserLib.Scene {
+        constructor() {
+          super("main");
+        }
         // world & objs
         player!: Phaser.GameObjects.Triangle;
         bullets!: Phaser.Physics.Arcade.Group;
@@ -92,7 +96,7 @@ export default function GameCanvas({
 
           // Neon grid background
           this.grid = this.add.graphics();
-          this.drawNeonGrid(Phaser);
+          this.drawNeonGrid(PhaserLib);
 
           // particle texture
           const g = this.add.graphics();
@@ -218,7 +222,7 @@ export default function GameCanvas({
         }
 
         spawnText(label: string, opts: { isRequired: boolean; reqIndex: number }) {
-          const x = Phaser.Math.Between(120, GAME_W - 120);
+          const x = PhaserLib.Math.Between(120, GAME_W - 120);
           const y = -24;
           const txt = this.add
             .text(x, y, label, {
@@ -236,7 +240,7 @@ export default function GameCanvas({
           const body = txt.body as Phaser.Physics.Arcade.Body;
           resizeArcadeBodyToText(txt, body);
 
-          body.setVelocityY(this.speed + Phaser.Math.Between(0, 30));
+          body.setVelocityY(this.speed + PhaserLib.Math.Between(0, 30));
           body.setImmovable(true);
 
           txt.setData("isRequired", opts.isRequired);
@@ -246,7 +250,7 @@ export default function GameCanvas({
           // Zig-zag
           this.tweens.add({
             targets: txt,
-            x: x + Phaser.Math.Between(-90, 90),
+            x: x + PhaserLib.Math.Between(-90, 90),
             duration: 1400,
             yoyo: true,
             repeat: -1,
@@ -562,7 +566,7 @@ export default function GameCanvas({
       }
 
       const config: Phaser.Types.Core.GameConfig = {
-        type: Phaser.AUTO,
+        type: PhaserLib.AUTO,
         width: GAME_W,
         height: GAME_H,
         parent: (containerRef.current as unknown as string | HTMLElement)!,
@@ -571,7 +575,7 @@ export default function GameCanvas({
         transparent: true,
       };
 
-      game = new Phaser.Game(config);
+      game = new PhaserLib.Game(config);
     })();
 
     return () => {
